@@ -6,10 +6,10 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 
 export default function Courses() {
-    return (
-      <div id="wd-courses">
-        <h2>Course 1234</h2>
-        <hr />
+  return (
+    <div id="wd-courses">
+      <h2>Course 1234</h2>
+      <hr />
       <table>
         <tr>
           <td valign="top">
@@ -28,6 +28,6 @@ export default function Courses() {
         </tr>
       </table>
 
-      </div>
-  );}
-  
+    </div>
+  );
+}
