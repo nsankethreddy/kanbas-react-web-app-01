@@ -3,7 +3,6 @@ import Account from "./Account";
 import Dashboard from "./Dashboard";
 import KanbasNavigation from "./Navigation";
 import Courses from "./Courses";
-
 export default function Kanbas() {
   return (
     <div id="wd-kanbas">
@@ -13,6 +12,7 @@ export default function Kanbas() {
             <KanbasNavigation />
           </td>
           <td valign="top">
+            <h1>Kanbas</h1>
             <Routes>
               <Route path="/" element={<Navigate to="/Kanbas/Account" />} />
               <Route path="/Account/*" element={<Account />} />
