@@ -3,12 +3,11 @@ export default function AssignmentEditor() {
     <div id="wd-assignments-editor">
       <h3><label htmlFor="wd-name">Assignment Name</label></h3>
       <input id="wd-name" value="A1 - ENV + HTML" /><br /><br />
-      <textarea id="wd-description">
+      <textarea id="wd-description" rows={10} cols={50}>
         The assignment is available online Submit a link to the landing page of
       </textarea>
       <br /><br />
       <table>
-        {/* points */}
         <tr>
           <td align="right" valign="top">
             <label htmlFor="wd-points">Points</label>
@@ -18,7 +17,6 @@ export default function AssignmentEditor() {
           </td>
         </tr>
         <br />
-        {/* Assignment Group */}
         <tr>
           <td align="right" valign="top">
             <label htmlFor="wd-group">Assignment Group </label>
@@ -32,7 +30,6 @@ export default function AssignmentEditor() {
           </td>
         </tr>
         <br />
-        {/* Display grade */}
         <tr>
           <td align="right" valign="top">
             <label htmlFor="wd-display-grade-as">Display Grade as </label>
@@ -45,7 +42,6 @@ export default function AssignmentEditor() {
           </td>
         </tr>
         <br />
-        {/* Submission Type */}
         <tr>
           <td align="right" valign="top">
             <label htmlFor="wd-display-grade-as">Submission Type </label>
@@ -67,42 +63,44 @@ export default function AssignmentEditor() {
           </td>
         </tr>
         <br />
-        {/* Assign to */}
+        <tr>
+          <td colSpan={2} align="center" valign="top">
+            <label htmlFor="wd-assign-to">Assign Assign to</label><br />
+          </td>
+        </tr>
         <tr>
           <td colSpan={2} align="right" valign="top">
-            <label htmlFor="wd-assign-to">Assign Assign to</label><br />
             <input id="wd-assign-to" value="Everyone" />
           </td>
         </tr>
         <br />
-        {/* Due */}
         <tr>
-          <td align="right" valign="top">
+          <td></td>
+          <td>
             <label htmlFor="wd-due-date">Due</label>
           </td>
+        </tr>
+        <tr>
+          <td></td>
           <td>
             <input id="wd-due-date" type="date" value="2024-05-13" />
           </td>
         </tr>
         <br />
-        {/* Available Data */}
         <tr>
-          <td colSpan={2}>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <div>
-                <label htmlFor="wd-available-from">Available from</label><br />
-                <input id="wd-available-from" type="date" value="2024-05-06" />
-              </div>
-              <div>
-                <label htmlFor="wd-available-until">Until</label><br />
-                <input id="wd-available-until" type="date" value="2024-05-20" />
-              </div>
-            </div>
+          <td>
+          </td>
+          <td>
+            <label htmlFor="wd-available-from">Available from</label><br />
+            <input id="wd-available-from" type="date" value="2024-05-06" />
+          </td>
+          <td>
+            <label htmlFor="wd-available-until">Until</label><br />
+            <input id="wd-available-until" type="date" value="2024-05-20" />
           </td>
         </tr>
       </table>
       <hr />
-      {/* cancel and save button */}
       <div style={{ textAlign: "right" }}>
         <button>Cancel</button>
         <button>Save</button>
