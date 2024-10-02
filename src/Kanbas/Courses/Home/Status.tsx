@@ -10,7 +10,7 @@ import { FaBell } from "react-icons/fa";
 {/* Find more icons */ }
 export default function CourseStatus() {
   return (
-    <div id="wd-course-status" style={{ width: "300px"}}>
+    <div id="wd-course-status" style={{ width: "300px", marginLeft: "20px" }}>
       <h2>Course Status</h2>
       <div className="d-flex">
         <div className="w-50 pe-1">
