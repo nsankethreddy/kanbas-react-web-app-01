@@ -37,6 +37,7 @@ export default function Lab3() {
   console.log('Hello World!');
   return (
     <div>
+      <h1>JavaScript</h1>
       <h2>Lab 3</h2>
       <VariablesAndConstants />
       <VariableTypes />

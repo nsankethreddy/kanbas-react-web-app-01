@@ -79,5 +79,167 @@
         "dueDate": "2023-10-30",
         "points": 180,
         "description": "This final exam will cover systems engineering concepts such as requirements analysis, system integration, and project management within aerospace systems. You will be asked to solve problems related to complex system design, testing, and validation. Prepare to apply theoretical knowledge to practical aerospace scenarios."
+    },
+    {
+        "_id": "A401",
+        "title": "Organic Synthesis Project",
+        "course": "RS104",
+        "availableDate": "2023-02-15",
+        "dueDate": "2023-03-10",
+        "points": 175,
+        "description": "Design and propose a multi-step organic synthesis of a complex molecule. Your project should include reaction mechanisms, predicted yields, and potential side reactions. Consider green chemistry principles in your synthetic route."
+    },
+    {
+        "_id": "A501",
+        "title": "Coordination Chemistry Report",
+        "course": "RS105",
+        "availableDate": "2023-03-01",
+        "dueDate": "2023-03-22",
+        "points": 140,
+        "description": "Prepare a comprehensive report on a specific class of coordination compounds. Include their synthesis, characterization techniques, and applications in catalysis or materials science."
+    },
+    {
+        "_id": "A601",
+        "title": "Thermodynamics Problem Set",
+        "course": "RS106",
+        "availableDate": "2023-02-20",
+        "dueDate": "2023-03-06",
+        "points": 100,
+        "description": "Solve a set of advanced problems related to chemical thermodynamics. Topics include phase equilibria, solution thermodynamics, and the application of statistical mechanics to chemical systems."
+    },
+    {
+        "_id": "A701",
+        "title": "Elvish Language Translation",
+        "course": "RS107",
+        "availableDate": "2023-02-01",
+        "dueDate": "2023-02-28",
+        "points": 120,
+        "description": "Translate a given passage from English to Sindarin Elvish. Provide a linguistic analysis of your translation, explaining grammatical structures and word choices."
+    },
+    {
+        "_id": "A801",
+        "title": "Middle-earth Diplomacy Simulation",
+        "course": "RS108",
+        "availableDate": "2023-03-15",
+        "dueDate": "2023-04-05",
+        "points": 200,
+        "description": "Participate in a role-playing simulation of a diplomatic council in Middle-earth. Represent a chosen race and negotiate a complex inter-species treaty. Submit a report analyzing the diplomatic strategies employed."
+    },
+    {
+        "_id": "A901",
+        "title": "Magical Artifact Analysis",
+        "course": "RS109",
+        "availableDate": "2023-04-01",
+        "dueDate": "2023-04-22",
+        "points": 180,
+        "description": "Choose a magical artifact from Middle-earth lore and prepare a detailed analysis of its powers, history, and significance. Include a discussion of the ethical implications of its use."
+    },
+    {
+        "_id": "A1001",
+        "title": "Democratic School Model Proposal",
+        "course": "RS110",
+        "availableDate": "2023-02-10",
+        "dueDate": "2023-03-10",
+        "points": 150,
+        "description": "Design a proposal for implementing democratic principles in a school setting. Address curriculum design, student governance, and community involvement."
+    },
+    {
+        "_id": "A1101",
+        "title": "Liberation Movement Case Study",
+        "course": "RS111",
+        "availableDate": "2023-03-05",
+        "dueDate": "2023-04-02",
+        "points": 190,
+        "description": "Conduct a case study of a specific Latin American independence movement. Analyze its philosophical foundations, key figures, and lasting impact on the region's political landscape."
+    },
+    {
+        "_id": "A1201",
+        "title": "19th Century Education Reform Essay",
+        "course": "RS112",
+        "availableDate": "2023-02-25",
+        "dueDate": "2023-03-20",
+        "points": 130,
+        "description": "Write an essay comparing the educational philosophies of Simon Rodríguez and another prominent 19th-century education reformer. Discuss their influence on modern educational practices."
+    },
+    {
+        "_id": "A1301",
+        "title": "Christian Ethics Case Analysis",
+        "course": "RS113",
+        "availableDate": "2023-02-05",
+        "dueDate": "2023-02-26",
+        "points": 100,
+        "description": "Analyze a contemporary ethical dilemma from the perspective of Christian ethics. Present arguments for multiple viewpoints and provide a reasoned conclusion based on Christian principles."
+    },
+    {
+        "_id": "A1401",
+        "title": "Early Church Historical Research",
+        "course": "RS114",
+        "availableDate": "2023-03-10",
+        "dueDate": "2023-04-07",
+        "points": 160,
+        "description": "Conduct research on a specific early Christian community or figure from the Apostolic Age. Use primary sources to support your analysis of their role in the spread of Christianity."
+    },
+    {
+        "_id": "A1501",
+        "title": "Christian Leadership Project",
+        "course": "RS115",
+        "availableDate": "2023-04-05",
+        "dueDate": "2023-05-03",
+        "points": 170,
+        "description": "Develop a comprehensive plan for a community service project that demonstrates Christian leadership principles. Include goals, resource allocation, and methods for measuring impact."
+    },
+    {
+        "_id": "A1601",
+        "title": "Sufi Poetry Analysis",
+        "course": "RS116",
+        "availableDate": "2023-02-15",
+        "dueDate": "2023-03-08",
+        "points": 110,
+        "description": "Select a Sufi poem and provide an in-depth analysis of its mystical themes, symbolism, and spiritual teachings. Relate the poem to broader Sufi philosophical concepts."
+    },
+    {
+        "_id": "A1701",
+        "title": "Islamic Ethics Debate",
+        "course": "RS117",
+        "availableDate": "2023-03-20",
+        "dueDate": "2023-04-10",
+        "points": 140,
+        "description": "Participate in a structured debate on an ethical issue from an Islamic perspective. Prepare arguments based on Quranic teachings and Hadith, considering various schools of thought."
+    },
+    {
+        "_id": "A1801",
+        "title": "Esoteric Islam Research Paper",
+        "course": "RS118",
+        "availableDate": "2023-04-15",
+        "dueDate": "2023-05-10",
+        "points": 200,
+        "description": "Write a research paper on a specific aspect of Islamic esotericism, such as the concept of the unseen world or the role of spiritual visions in Islamic mysticism. Include a discussion of Khidr's teachings."
+    },
+    {
+        "_id": "A1901",
+        "title": "Ancient Chinese Water Management Project",
+        "course": "RS119",
+        "availableDate": "2023-02-20",
+        "dueDate": "2023-03-20",
+        "points": 180,
+        "description": "Design a water management system inspired by Yu the Great's techniques, adapted for a modern environmental challenge. Include an analysis of the project's potential ecological impact."
+    },
+    {
+        "_id": "A2001",
+        "title": "Chinese Mythological Leadership Case Study",
+        "course": "RS120",
+        "availableDate": "2023-03-25",
+        "dueDate": "2023-04-22",
+        "points": 150,
+        "description": "Conduct a case study comparing the leadership styles of Yu the Great and another figure from Chinese mythology. Analyze their approaches to problem-solving and governance."
+    },
+    {
+        "_id": "A2101",
+        "title": "Ancient Hydraulic Engineering Simulation",
+        "course": "RS121",
+        "availableDate": "2023-04-10",
+        "dueDate": "2023-05-08",
+        "points": 220,
+        "description": "Create a digital simulation or physical model of an ancient hydraulic engineering project. Compare its design and efficiency with modern hydraulic systems."
     }
 ]
