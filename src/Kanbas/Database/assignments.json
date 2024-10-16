@@ -3,72 +3,81 @@
         "_id": "A101",
         "title": "Propulsion Assignment",
         "course": "RS101",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "points": 150,
+        "description": "Analyze propulsion systems and their applications."
     },
     {
         "_id": "A102",
         "title": "Combustion Analysis",
         "course": "RS101",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "points": 120,
+        "description": "Evaluate the combustion processes in engines."
     },
     {
         "_id": "A103",
         "title": "Nozzle Design Project",
         "course": "RS101",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "points": 200,
+        "description": "Design an efficient nozzle for rocket propulsion."
     },
     {
         "_id": "A201",
         "title": "Aerodynamics Quiz",
         "course": "RS102",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-10",
+        "points": 80,
+        "description": "Test your knowledge on aerodynamic principles."
     },
     {
         "_id": "A202",
         "title": "Flow Analysis",
         "course": "RS102",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "points": 170,
+        "description": "Perform a detailed flow analysis for a given fluid."
     },
     {
         "_id": "A203",
         "title": "Heating Analysis",
         "course": "RS102",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-20",
+        "points": 160,
+        "description": "Analyze thermal properties and heat transfer in systems."
     },
     {
         "_id": "A301",
         "title": "Structural Design Task",
         "course": "RS103",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-15",
+        "points": 190,
+        "description": "Design a structural component with given load constraints."
     },
     {
         "_id": "A302",
         "title": "Orbital Calculations",
         "course": "RS103",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-25",
+        "points": 210,
+        "description": "Calculate orbital parameters for satellite motion."
     },
     {
         "_id": "A303",
         "title": "Systems Engineering Exam",
         "course": "RS103",
-        "availableDate": "2021-09-01",
-        "dueDate": "2021-09-15",
-        "points": 100
+        "availableDate": "2023-10-01",
+        "dueDate": "2023-10-30",
+        "points": 180,
+        "description": "Final exam covering systems engineering concepts."
     }
 ]
