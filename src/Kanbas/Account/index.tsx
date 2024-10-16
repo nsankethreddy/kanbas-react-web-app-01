@@ -1,9 +1,8 @@
-import { Route, Routes, Navigate } from "react-router";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Profile from "./Profile";
 import Signin from "./Signin";
 import Signup from "./Signup";
-import Profile from "./Profile";
 import AccountNavigation from "./Navigation";
-
 export default function Account() {
   return (
     <div id="wd-account-screen">
@@ -13,8 +12,8 @@ export default function Account() {
             <AccountNavigation />
           </td>
           <td valign="top">
-            <h2>Account</h2>
-            <Routes>
+          <h2>Account</h2>
+          <Routes>
               <Route path="/" element={<Navigate to="/Kanbas/Account/Signin" />} />
               <Route path="/Signin" element={<Signin />} />
               <Route path="/Profile" element={<Profile />} />
