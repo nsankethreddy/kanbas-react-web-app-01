@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import * as db from '../../Database';
+import { Link } from 'react-router-dom';
 
 export default function Editor() {
   const { cid, aid } = useParams();
@@ -124,8 +125,8 @@ export default function Editor() {
         <hr />
 
         <div className="text-end">
-          <button className="btn btn-secondary me-2">Cancel</button>
-          <button className="btn btn-danger">Save</button>
+          <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-secondary me-2">Cancel</Link>
+          <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-danger">Save</Link>
         </div>
       </div>
     </div>
