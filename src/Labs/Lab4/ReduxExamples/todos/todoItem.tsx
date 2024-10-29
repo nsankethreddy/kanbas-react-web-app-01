@@ -1,13 +1,13 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, setTodo } from "./todosReducer";
+interface Todo {
+    id: number;
+    title: string;
+}
 
-export default function TodoItem({ todo, }: {
-    todo: { id: string; title: string };
-    deleteTodo: (id: string) => void;
-    setTodo: (todo: { id: string; title: string }) => void;
-}) {
+export default function TodoItem({ todo }: { todo: Todo }) {
     const dispatch = useDispatch();
-
     return (
         <li key={todo.id} className="list-group-item">
             <button onClick={() => dispatch(deleteTodo(todo.id))}
