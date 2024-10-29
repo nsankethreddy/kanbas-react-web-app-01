@@ -44,10 +44,10 @@ export default function Dashboard() {
         </button>
 
       </h5><br />
-      <input defaultValue={course.name} className="form-control mb-2" onChange=
+      <input value={course.name} className="form-control mb-2" onChange=
         {(e) => setCourse({ ...course, name: e.target.value })} />
 
-      <textarea defaultValue={course.description} className="form-control" onChange=
+      <textarea value={course.description} className="form-control" onChange=
         {(e) => setCourse({ ...course, description: e.target.value })} />
 
       <hr />
