@@ -36,7 +36,12 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
         </>
       )}
 
-      <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2> <hr />
+      <h2 id="wd-dashboard-published">Published Courses ({courses.filter((course) =>
+        enrollments.some(
+          (enrollment) =>
+            enrollment.user === currentUser._id &&
+            enrollment.course === course._id
+        )).length})</h2> <hr />
       <div id="wd-dashboard-courses" className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.filter((course) =>
