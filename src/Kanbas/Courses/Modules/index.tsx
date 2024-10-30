@@ -14,12 +14,16 @@ export default function Modules() {
   const [moduleName, setModuleName] = useState("");
   const { modules } = useSelector((state: any) => state.modulesReducer);
   const dispatch = useDispatch();
+  const { currentUser } = useSelector((state: any) => state.accountReducer); // Get current user
+  console.log(currentUser.role);
+  const isFaculty = Boolean(currentUser.role === "FACULTY");
+  console.log(isFaculty);
 
   return (
     <div>
-      <ModuleControls setModuleName={setModuleName} moduleName={moduleName}
-      // THIS ADD MODE IS LIL SUS
-      addModule={() => dispatch(addModule({ name: moduleName, course: cid }))} /><br /><br /><br /><br />
+      <ModuleControls setModuleName={setModuleName} moduleName={moduleName} isFaculty={isFaculty}
+        // THIS ADD MODE IS LIL SUS
+        addModule={() => dispatch(addModule({ name: moduleName, course: cid }))} /><br /><br /><br /><br />
       <ul id="wd-modules" className="list-group rounded-0">
         {modules.filter((module: any) => module.course === cid).map((module: any) => (
           <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
@@ -35,8 +39,11 @@ export default function Modules() {
               <ModuleControlButtons
                 moduleId={module._id}
                 deleteModule={(moduleId) => { dispatch(deleteModule(moduleId)); }}
-                editModule={(moduleId) => dispatch(editModule(moduleId))} />
+                editModule={(moduleId) => dispatch(editModule(moduleId))}
+                isFaculty={isFaculty}
+              />
             </div>
+
             {module.lessons && (
               <ul className="wd-lessons list-group rounded-0">
                 {module.lessons.map((lesson: any) => (

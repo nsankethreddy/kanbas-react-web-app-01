@@ -4,16 +4,20 @@ import { BsPlus } from "react-icons/bs";
 import { FaTrash } from "react-icons/fa";
 import { FaPencil } from "react-icons/fa6";
 
-export default function ModulesControlButtons(
-    { moduleId, deleteModule, editModule }: {
+export default function ModuleControlButtons(
+    { moduleId, deleteModule, editModule, isFaculty }: {
         moduleId: string; deleteModule: (moduleId: string) => void;
-        editModule: (moduleId: string) => void
+        editModule: (moduleId: string) => void; isFaculty: boolean;
     }) {
 
     return (
-        <div className="float-end">
-            <FaPencil onClick={() => editModule(moduleId)} className="text-primary me-3" />
-            <FaTrash className="text-danger me-2 mb-1" onClick={() => deleteModule(moduleId)} />
+        <div className="float-end d-flex align-items-center">
+            {isFaculty && (
+                <div>
+                    <FaPencil onClick={() => editModule(moduleId)} className="text-primary me-3" />
+                    <FaTrash className="text-danger me-2 mb-1" onClick={() => deleteModule(moduleId)} />
+                </div>
+            )}
             <GreenCheckmark />
             <BsPlus className="fs-2 me-2" />
             <IoEllipsisVertical className="fs-4" />
