@@ -30,7 +30,7 @@ export default function Assignments() {
           <button id="wd-add-module-btn" className="btn btn-lg btn-light me-1 border border-1">
             <LuPlus className="position-relative me-2" style={{ bottom: "1px" }} />
             Group</button>
-          <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-1">
+          <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-1" onClick={() => console.log("hi")}>
             <LuPlus className="position-relative me-2" style={{ bottom: "1px" }} />
             Assignment</button>
         </div>
