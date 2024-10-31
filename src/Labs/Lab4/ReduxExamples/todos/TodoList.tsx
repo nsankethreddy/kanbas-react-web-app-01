@@ -1,3 +1,4 @@
+import React from "react";
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 import { useSelector } from "react-redux";
@@ -6,7 +7,7 @@ export default function TodoList() {
     return (
         <div id="wd-todo-list-redux">
             <h2>Todo List</h2>
-            <ul className="list-group">
+            <ul className="list-group" style={{maxWidth: 500}}>
                 <TodoForm />
                 {todos.map((todo: any) => (
                     <TodoItem todo={todo} />
@@ -16,4 +17,3 @@ export default function TodoList() {
         </div>
     );
 }
-
