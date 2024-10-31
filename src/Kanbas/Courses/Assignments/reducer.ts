@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { assignments } from "../../Database";
-import { title } from "process";
 const initialState = {
   assignments: assignments,
 };
@@ -8,21 +7,12 @@ const assignmentsSlice = createSlice({
   name: "assignments",
   initialState,
   reducers: {
-    addAssignment: (state, { payload: assignment }) => {
-      const newAssignment: any = {
-        _id: new Date().getTime().toString(),
-        title: assignment.title,
-        name: assignment.name,
-        course: assignment.course,
-        availableDate: assignment.availableDate,
-        dueDate: assignment.dueDate,
-        points: assignment.points,
-      };
-      state.assignments = [...state.assignments, newAssignment] as any;
+    addAssignment: (state, action) => {
+      state.assignments.push(action.payload);
     },
-    deleteAssignment: (state, { payload: assignmentId }) => {
+    deleteAssignment: (state, action) => {
       state.assignments = state.assignments.filter(
-        (a: any) => a._id !== assignmentId
+        (a: any) => a._id !== action.payload
       );
     },
     updateAssignment: (state, { payload: assignment }) => {
@@ -30,10 +20,10 @@ const assignmentsSlice = createSlice({
         a._id === assignment._id ? assignment : a
       ) as any;
     },
-    editAssignment: (state, { payload: assignmentId }) => {
-      state.assignments = state.assignments.map((a: any) =>
-        a._id === assignmentId ? { ...a, editing: true } : a
-      ) as any;
+    editAssignment: (state, { payload: { id, data } }) => {
+      state.assignments = state.assignments.map((a) =>
+        a._id === id ? { ...a, ...data } : a
+      );
     },
   },
 });
