@@ -8,8 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function AssignmentControls({ cid }: any) {
     const { currentUser } = useSelector((state: any) => state.accountReducer);
-    console.log(currentUser);
-    const isFaculty = currentUser?.role === "FACULTY";
+    const isFaculty = Boolean(currentUser.role === "FACULTY");
     return (
         <div id="wd-modules-controls" className="text-nowrap">
             <div className="d-flex justify-content-between align-items-center my-3">

@@ -19,6 +19,9 @@ export default function Assignments() {
   );
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [assignmentToDelete, setAssignmentToDelete] = useState<string | null>(null);
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+  const isFaculty = Boolean(currentUser.role === "FACULTY");
+  const isStudent = Boolean(currentUser.role === "STUDENT");
 
   const handleDeleteClick = (assignmentId: string) => {
     setAssignmentToDelete(assignmentId);
@@ -79,11 +82,13 @@ export default function Assignments() {
                   <b>Due</b> {assignment.dueDate} at 11:59pm | {assignment.points} pts
                 </small>
               </div>
-              <FaTrash
-                className="text-danger me-2 mb-1"
-                onClick={() => handleDeleteClick(assignment._id)}
-                style={{ cursor: 'pointer' }}
-              />
+              {isFaculty && (
+                <FaTrash
+                  className="text-danger me-2 mb-1"
+                  onClick={() => handleDeleteClick(assignment._id)}
+                  style={{ cursor: 'pointer' }}
+                />
+              )}
               <LessonControlButtons />
             </li>
           ))

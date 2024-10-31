@@ -70,6 +70,8 @@ export default function AssignmentEditor() {
         navigate(`/Kanbas/Courses/${cid}/Assignments`);
     };
 
+    const { currentUser } = useSelector((state: any) => state.accountReducer);
+    const isStudent = Boolean(currentUser.role === "STUDENT");
 
 
     return (
@@ -78,11 +80,24 @@ export default function AssignmentEditor() {
 
             <div className="mb-3">
                 <label htmlFor="title" className="form-label">Assignment Name</label>
-                <input id="title" className="form-control" value={formData.title} onChange={handleInputChange} />
+                <input
+                    id="title"
+                    className="form-control"
+                    value={formData.title}
+                    onChange={handleInputChange}
+                    disabled={isStudent}
+                />
             </div>
 
             <div className="mb-3">
-                <textarea id="description" className="form-control" rows={5} value={formData.description} onChange={handleInputChange} />
+                <textarea
+                    id="description"
+                    className="form-control"
+                    rows={5}
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    disabled={isStudent}
+                />
             </div>
 
             <div className="row mb-3 align-items-center">
@@ -90,7 +105,13 @@ export default function AssignmentEditor() {
                     <label htmlFor="points" className="form-label">Points</label>
                 </div>
                 <div className="col-md-7">
-                    <input id="points" type="number" className="form-control" value={formData.points} onChange={handleInputChange} />
+                    <input id="points"
+                        type="number"
+                        className="form-control"
+                        value={formData.points}
+                        onChange={handleInputChange}
+                        disabled={isStudent}
+                    />
                 </div>
             </div>
 
@@ -99,7 +120,12 @@ export default function AssignmentEditor() {
                     <label htmlFor="assignmentGroup" className="form-label">Assignment Group</label>
                 </div>
                 <div className="col-md-7">
-                    <select id="assignmentGroup" className="form-select" value={formData.assignmentGroup} onChange={handleInputChange}>
+                    <select id="assignmentGroup"
+                        className="form-select"
+                        value={formData.assignmentGroup}
+                        onChange={handleInputChange}
+                        disabled={isStudent}
+                    >
                         <option value="Assignments">Assignments</option>
                         <option value="Quizzes">Quizzes</option>
                         <option value="Exams">Exams</option>
@@ -113,7 +139,12 @@ export default function AssignmentEditor() {
                     <label htmlFor="displayGradeAs" className="form-label">Display Grade As</label>
                 </div>
                 <div className="col-md-7">
-                    <select id="displayGradeAs" className="form-select" value={formData.displayGradeAs} onChange={handleInputChange}>
+                    <select id="displayGradeAs"
+                        className="form-select"
+                        value={formData.displayGradeAs}
+                        onChange={handleInputChange}
+                        disabled={isStudent}
+                    >
                         <option value="Percentage">Percentage</option>
                         <option value="GPA">GPA</option>
                         <option value="Scores">Scores</option>
@@ -126,7 +157,12 @@ export default function AssignmentEditor() {
                     <label htmlFor="submissionType" className="form-label">Submission Type</label>
                 </div>
                 <div className="col-md-7">
-                    <select id="submissionType" className="form-select" value={formData.submissionType} onChange={handleInputChange}>
+                    <select id="submissionType"
+                        className="form-select"
+                        value={formData.submissionType}
+                        onChange={handleInputChange}
+                        disabled={isStudent}
+                    >
                         <option value="Online">Online</option>
                         <option value="Offline">Offline</option>
                     </select>
@@ -142,6 +178,7 @@ export default function AssignmentEditor() {
                                         id={option}
                                         checked={formData.onlineEntryOptions[option]}
                                         onChange={handleInputChange}
+                                        disabled={isStudent}
                                     />
                                     <label htmlFor={option} className="form-check-label">
                                         {option.replace(/([A-Z])/g, ' $1').replace(/^\w/, c => c.toUpperCase())}
@@ -158,7 +195,13 @@ export default function AssignmentEditor() {
                     <label htmlFor="dueDate" className="form-label">Due Date</label>
                 </div>
                 <div className="col-md-7">
-                    <input id="dueDate" type="date" className="form-control" value={formData.dueDate} onChange={handleInputChange} />
+                    <input id="dueDate"
+                        type="date"
+                        className="form-control"
+                        value={formData.dueDate}
+                        onChange={handleInputChange}
+                        disabled={isStudent}
+                    />
                 </div>
             </div>
 
@@ -167,7 +210,13 @@ export default function AssignmentEditor() {
                     <label htmlFor="availableDate" className="form-label">Available From</label>
                 </div>
                 <div className="col-md-7">
-                    <input id="availableDate" type="date" className="form-control" value={formData.availableDate} onChange={handleInputChange} />
+                    <input id="availableDate"
+                        type="date"
+                        className="form-control"
+                        value={formData.availableDate}
+                        onChange={handleInputChange}
+                        disabled={isStudent}
+                    />
                 </div>
             </div>
 
