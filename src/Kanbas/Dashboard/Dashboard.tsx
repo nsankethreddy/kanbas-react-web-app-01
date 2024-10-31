@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import * as db from "./Database";
+import * as db from "../Database";
 import { useSelector } from "react-redux";
 
 export default function Dashboard({ courses, course, setCourse, addNewCourse,
