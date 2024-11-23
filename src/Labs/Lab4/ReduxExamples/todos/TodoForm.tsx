@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addTodo, updateTodo, setTodo } from "./TodosReducer";
+import { addTodo, updateTodo, setTodo } from "./todosReducer";
 
 export default function TodoForm() {
-  const todo = useSelector((state:any) => state.Todos);
+  const todo = useSelector((state: any) => state.Todos.todo); // Corrected selector
   const dispatch = useDispatch();
 
   return (
@@ -12,11 +12,23 @@ export default function TodoForm() {
         onChange={(e) => dispatch(setTodo({ title: e.target.value }))}
       />
       <div className="d-flex float-end">
-      <button onClick={() => dispatch(updateTodo(todo))} id="wd-update-todo-click" className="btn btn-warning" style={{ marginBottom: "10px", marginLeft:"10px" }}>Update</button>
-      <button onClick={() => dispatch(addTodo())} id="wd-add-todo-click" className="btn btn-success" style={{ marginBottom: "10px", marginLeft:"10px" }}>Add</button>
-      
+        <button
+          onClick={() => dispatch(updateTodo(todo))}
+          id="wd-update-todo-click"
+          className="btn btn-warning"
+          style={{ marginBottom: "10px", marginLeft: "10px" }}
+        >
+          Update
+        </button>
+        <button
+          onClick={() => dispatch(addTodo())}
+          id="wd-add-todo-click"
+          className="btn btn-success"
+          style={{ marginBottom: "10px", marginLeft: "10px" }}
+        >
+          Add
+        </button>
       </div>
-
     </li>
   );
 }
