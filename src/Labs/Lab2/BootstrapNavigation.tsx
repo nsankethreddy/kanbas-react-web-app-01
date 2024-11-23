@@ -1,5 +1,5 @@
-export default function BoostrapNavigation(){
-    return(
+export default function BoostrapNavigation() {
+    return (
         <div>
             <div id="wd-css-navigating-with-tabs">
                 <h2>Tabs</h2>
@@ -17,7 +17,7 @@ export default function BoostrapNavigation(){
                         <a className="nav-link disabled" href="#">Disabled</a>
                     </li>
                 </ul>
-            </div><br/>
+            </div><br />
             <div id="wd-css-navigating-with-cards">
                 <h2>
                     Cards
@@ -27,15 +27,15 @@ export default function BoostrapNavigation(){
                     <img src="images/stacked.jpg"
                         className="card-img-top" />
                     <div className="card-body">
-                    <h5 className="card-title">
-                        Stacking Starship
-                    </h5>
-                    <p className="card-text">
-                        Stacking the most powerful rocket in history. Mars or bust!
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                        Boldly Go
-                    </a>
+                        <h5 className="card-title">
+                            Stacking Starship
+                        </h5>
+                        <p className="card-text">
+                            Stacking the most powerful rocket in history. Mars or bust!
+                        </p>
+                        <a href="#" className="btn btn-primary">
+                            Boldly Go
+                        </a>
                     </div>
                 </div>
             </div>
