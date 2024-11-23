@@ -1,15 +1,26 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-body * {
-  font-family: Arial, Helvetica, sans-serif;
-}
+body   {  margin: 0;  padding: 0;  }
+body * {  font-family: Arial, Helvetica, sans-serif;  }
 
 @media (min-width: 768px) {
   #wd-kanbas .wd-main-content-offset {
     padding-left: 140px !important;
   }
+}
+
+.wd-dashboard-course{
+  width: 250px;
+  max-width: 270px;
+  margin: 30px 0 30px 0;
+}
+
+.card{
+  height: 100%;
+}
+
+.wd-dashboard-course-title{
+  white-space :nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 
 .list-group.wd > .list-group-item.active {
@@ -18,32 +29,59 @@ body * {
   border-left: 3px solid black !important;
 }
 
-.search-container {
-  position: relative;
+#wd-courses-navigation{
   display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+  flex-direction: column;
 }
-
-.search-icon {
-  position: absolute;
-  left: 10px;
-  font-size: 1.5em;
-  color: #aaa;
-}
-
-.search-input {
-  padding-left: 40px; /* Adjust this value to make space for the icon */
+#wd-courses-navigation .list-group-item{
   width: 100%;
-  height: 40px;
-  font-size: 1em;
-  border-radius: 3px;
-  border: 1px solid #c5c5c5;
 }
 
-.wd-assignment{
-  margin-left: 40px;
+.btn-secondary {
+  --bs-btn-color: #000 !important;
+  --bs-btn-bg: #c7cdd1 !important;
+  --bs-btn-border-color: #c7cdd1 !important;
+  --bs-btn-hover-color: #fff !important;
 }
+.bg-secondary {
+  --bs-secondary-rgb: 199, 205, 209;
+}
+.list-group-item {
+  --bs-list-group-border-color: gray;
+ 
+}
+.wd-lesson {
+  border-left: 3px solid green !important;
+}
+
+.module-container{
+  width: 850px;
+  margin-left: 20px;
+}
+
+#wd-courses-navigation .list-group-item {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 20px;
+}
+
+#wd-modules-controls{
+  margin-top: 10px;
+}
+
+.wd-lesson .wd-assignment-link{
+  text-decoration:"none";
+  color:"black";
+}
+
+.custom-text-size{
+  font-size: 0.5rem !important;
+}
+
+.assignment-padding{
+  padding: 10px;
+} 
+/*
 .assignment-header {
   position: relative;
   display: flex;
@@ -58,3 +96,29 @@ body * {
   font-size: 1em;
   gap: 20px
 }
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 1.3em;
+  color: #aaa;
+}
+
+.search-input {
+  padding-left: 40px; 
+  width: 100%;
+  height: 40px;
+  font-size: 1em;
+  border-radius: 3px;
+  border: 1px solid #c5c5c5;
+} 
+
+.wd-assignment{
+  margin-left: 40px;
+}*/

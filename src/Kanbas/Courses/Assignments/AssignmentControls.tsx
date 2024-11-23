@@ -6,43 +6,44 @@ import { IoIosSearch } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function AssignmentControls({ cid }: any) {
+export default function AssignmentControls({ cid }:any) {
     const { currentUser } = useSelector((state: any) => state.accountReducer);
-    const isFaculty = Boolean(currentUser.role === "FACULTY");
+    console.log(currentUser);
+    const isFaculty = currentUser?.role === "FACULTY";
     return (
-        <div id="wd-modules-controls" className="text-nowrap">
-            <div className="d-flex justify-content-between align-items-center my-3">
-                <div className="input-group" style={{ width: "300px" }}>
-                    <span className="input-group-text" id="basic-addon1">
-                        <FaSearch />
-                    </span>
-                    <input
-                        id="wd-search-assignment"
-                        type="text"
-                        className="form-control"
-                        placeholder="Search for Assignments"
-                    />
-                </div>
-                {isFaculty && (
-                    <div className="ms-auto">
-                        <Link
-                            id="wd-add-assignments-btn"
-                            className="btn btn-md btn-danger me-1 float-end"
-                            to={`/Kanbas/Courses/${cid}/Assignments/new`}
-                        >
-                            <FaPlus className="position-relative" style={{ bottom: "1px", paddingRight: 1 }} />
-                            Assignment
-                        </Link>
-                        <button
-                            id="wd-group-assignments-btn"
-                            className="btn btn-md btn-secondary me-1 float-end"
-                        >
-                            <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
-                            Group
-                        </button>
-                    </div>
-                )}
-            </div>
+      <div id="wd-modules-controls" className="text-nowrap">
+        <div className="d-flex justify-content-between align-items-center my-3">
+        <div className="input-group" style={{ width: "300px" }}>
+          <span className="input-group-text" id="basic-addon1">
+            <FaSearch />
+          </span>
+          <input
+            id="wd-search-assignment"
+            type="text"
+            className="form-control"
+            placeholder="Search for Assignments"
+          />
         </div>
+        {isFaculty && (
+          <div className="ms-auto">
+          <Link
+            id="wd-add-assignments-btn"
+            className="btn btn-md btn-danger me-1 float-end"
+            to={`/Kanbas/Courses/${cid}/Assignments/new`}
+          >
+            <FaPlus className="position-relative" style={{ bottom: "1px", paddingRight:1}} />
+            Assignment
+          </Link>
+          <button
+            id="wd-group-assignments-btn"
+            className="btn btn-md btn-secondary me-1 float-end"
+          >
+            <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
+            Group
+          </button>
+          </div>
+        )}
+        </div>
+      </div>
     );
-}
+  }

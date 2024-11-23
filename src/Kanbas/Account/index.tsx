@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 export default function Account() {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   return (
+    //
     <div id="wd-account-screen">
       <table>
         <tr>
@@ -14,9 +15,9 @@ export default function Account() {
             <AccountNavigation />
           </td>
           <td valign="top">
-            <h2>Account</h2>
             <Routes>
-              <Route path="/" element={<Navigate to={currentUser ? "Profile" : "Signin"} />} />
+              <Route path="/"
+                     element={<Navigate to={ currentUser ? "/Kanbas/Account/Profile" : "/Kanbas/Account/Signin" } />} />
               <Route path="/Signin" element={<Signin />} />
               <Route path="/Profile" element={<Profile />} />
               <Route path="/Signup" element={<Signup />} />
@@ -24,6 +25,7 @@ export default function Account() {
           </td>
         </tr>
       </table>
+
     </div>
   );
 }

@@ -1,22 +1,24 @@
-import { Link, useParams, useLocation } from "react-router-dom";
-import "../styles.css";
-
+import React from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 export default function CoursesNavigation() {
-  const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People"];
-  const { cid } = useParams();
   const { pathname } = useLocation();
-  return (
-    <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0 me-4">
-      {links.map((link) => (
-        <Link
-          key={link}
-          id={`wd-course-${link.toLowerCase()}-link`}
-          to={`/Kanbas/Courses/${cid}/${link}`}
-          className={`list-group-item ${pathname.includes(link) ? "active" : "text-danger"} border border-0`}
-        >
+  const { cid } = useParams();
+  const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People"];
+  return (  
+    <div id="wd-courses-navigation" className="wd list-group fs-6 rounded-0">
+    {links.map((link)=>(
+      <React.Fragment key={link}>
+        <Link 
+        key={link} 
+        to={`/Kanbas/Courses/${cid}/${link}`}
+        id={`wd-course-${link.toLowerCase()}-link`}
+        className={`${pathname.includes(link)?"list-group-item active border border-0":"list-group-item text-danger border border-0"}`}>
           {link}
-        </Link>
+        </Link> 
+        <br/>
+        </React.Fragment>
       ))}
+      
     </div>
   );
 }

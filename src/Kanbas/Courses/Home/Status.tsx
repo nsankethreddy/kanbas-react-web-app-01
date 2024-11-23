@@ -2,23 +2,24 @@ import { MdDoNotDisturbAlt } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
 import { BiImport } from "react-icons/bi";
 import { LiaFileImportSolid } from "react-icons/lia";
-import { MdHome } from "react-icons/md";
-import { BiBarChart } from "react-icons/bi";
-import { GrAnnounce } from "react-icons/gr";
-import { FaBell } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { BsFileBarGraph } from "react-icons/bs";
+import { TfiAnnouncement } from "react-icons/tfi";
+import { IoMdNotifications } from "react-icons/io";
 
-{/* Find more icons */ }
+
+{/* Find more icons */}
 export default function CourseStatus() {
   return (
-    <div id="wd-course-status" style={{ width: "300px", marginLeft: "20px" }}>
+    <div id="wd-course-status" style={{ width: "300px" , marginLeft:10}}>
       <h2>Course Status</h2>
       <div className="d-flex">
-        <div className="w-50 pe-1">
-          <button className="btn btn-lg btn-secondary w-100 text-nowrap ">
+        <div className="w-75 pe-1">
+          <button className="btn btn-md btn-secondary w-100 text-nowrap ">
             <MdDoNotDisturbAlt className="me-2 fs-5" /> Unpublish </button>
         </div>
-        <div className="w-50">
-          <button className="btn btn-lg btn-success w-100">
+        <div className="w-75">
+          <button className="btn btn-md btn-success w-100">
             <FaCheckCircle className="me-2 fs-5" /> Publish </button>
         </div>
       </div><br />
@@ -27,15 +28,15 @@ export default function CourseStatus() {
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
         <LiaFileImportSolid className="me-2 fs-5" /> Import from Commons </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        <MdHome className="me-2 fs-5" />Choose Home Page</button>
+        <FaHome className="me-2 fs-5" /> Choose Home Page </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        <BiBarChart className="me-2 fs-5" />View Course Stream</button><br />
+        <BsFileBarGraph className="me-2 fs-5" /> View Course Screen </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        <GrAnnounce className="me-2 fs-5" />New Announcement</button><br />
+        <TfiAnnouncement className="me-2 fs-5" /> New Announcement </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        <BiBarChart className="me-2 fs-5" />New Analytics</button><br />
+        <BsFileBarGraph className="me-2 fs-5" /> New Analytics </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        <FaBell className="me-2 fs-5" />View Course Notifications</button>
+        <IoMdNotifications className="me-2 fs-5" /> View Course Notifications </button>
+      
     </div>
-  );
-}
+);}
