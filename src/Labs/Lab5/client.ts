@@ -47,3 +47,5 @@ export const updateTodo = async (todo: any) => {
   const response = await axios.put(`${TODOS_API}/${todo.id}`, todo);
   return response.data;
 };
+
+

@@ -6,15 +6,15 @@ import TOC from "./TOC";
 import Lab4 from "./Lab4";
 import store from "./store";
 import { Provider } from "react-redux";
-import Lab5 from "./lab5";
+import Lab5 from "./Lab5";
 
-export default function Labs() {
+export default function Labs(){
     return (
         <Provider store={store}>
             <div id="wd-labs">
-                <h1>Nagaraj Sanketh Reddy</h1>
+                <h1>Srimansi Ramesh Kumar</h1>
                 <h2>Labs</h2>
-                <TOC />
+                <TOC/>
                 <Routes>
                     <Route path="/" element={<Navigate to="Lab1" />} />
                     <Route path="Lab1" element={<Lab1 />} />
@@ -23,7 +23,7 @@ export default function Labs() {
                     <Route path="Lab4/*" element={<Lab4 />} />
                     <Route path="Lab5/*" element={<Lab5 />} />
                 </Routes>
-
+                
             </div>
         </Provider>
 

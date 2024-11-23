@@ -10,7 +10,7 @@ import Dimensions from "./Dimensions";
 import Flex from "./Flex";
 import Float from "./Float";
 import Foreground from "./Foreground";
-import Gridlayout from "./GridLayout";
+import Gridlayout from "./Gridlayout";
 import Margins from "./Margins";
 import Padding from "./Padding";
 import Positions from "./Positions";

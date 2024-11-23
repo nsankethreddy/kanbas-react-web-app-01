@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 export default function TOC() {
   const { pathname } = useLocation();
   return (
@@ -55,7 +55,7 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-k" href="https://kanbas-node-server-app-6-mxh1.onrender.com/" className="nav-link">
+        <a id="wd-k" href="https://kanbas-node-server-app-fdzu.onrender.com" className="nav-link">
           Server Link
         </a>
       </li>
