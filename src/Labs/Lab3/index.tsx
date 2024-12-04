@@ -27,7 +27,7 @@ import TernaryOperator from "./TernaryOperator";
 import VariablesAndConstants from "./VariablesAndConstants";
 import VariableTypes from "./VariableTypes";
 import Add from "./Add";
-import Square from "./Square";
+import Square from "./square";
 import Highlight from "./Highlight";
 import { useSelector } from "react-redux";
 
