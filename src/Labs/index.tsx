@@ -11,25 +11,25 @@ import Lab5 from "./lab5";
 export default function Labs() {
   return (
     <Provider store={store}>
-    <div>
-       
+      <div>
 
-      <h2 id="wd-name">Sanketh Reddy</h2>
-      <h1>Labs</h1>
-      <TOC></TOC>
-      <Routes>
-        <Route path="/" element={<Navigate to="Lab1" />} />
-        <Route path="Lab1" element={<Lab1 />} />
-        <Route path="Lab2" element={<Lab2 />} />
-        
-        <Route path="Lab3/*" element={<Lab3 />} />
-        <Route path="Lab4/*" element={<Lab4 />} />
-        <Route path="Lab5/*" element={<Lab5 />} />
-        <Route path="kanbas" element={<Kanbas/>}></Route>
-        
-      </Routes>
-    
-    </div>
+
+        <h2 id="wd-name">Sanketh Reddy</h2>
+        <h1>Labs</h1>
+        <TOC></TOC>
+        <Routes>
+          <Route path="/" element={<Navigate to="Lab1" />} />
+          <Route path="Lab1" element={<Lab1 />} />
+          <Route path="Lab2" element={<Lab2 />} />
+
+          <Route path="Lab3/*" element={<Lab3 />} />
+          <Route path="Lab4/*" element={<Lab4 />} />
+          <Route path="Lab5/*" element={<Lab5 />} />
+          <Route path="kanbas" element={<Kanbas />}></Route>
+
+        </Routes>
+
+      </div>
     </Provider>
   );
 }
