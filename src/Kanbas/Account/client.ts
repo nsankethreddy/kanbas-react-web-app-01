@@ -6,7 +6,7 @@ export const ENROLLMENTS_API = `https://kanbas-node-server-app-1-pv0y.onrender.c
 
 export const signin = async (credentials: any) => {
   const response = await axiosWithCredentials.post(
-    `${USERS_API}/signin`,
+    `${USERS_API}/Signin`,
     credentials
   );
   return response.data;
