@@ -15,7 +15,7 @@ import Margins from "./Margins";
 import Padding from "./Padding";
 import Positions from "./Positions";
 import ReactIconsSampler from "./ReactIcons";
-import ScreensizeLabel from "./ScreensizeLabel";
+// import ScreensizeLabel from "./ScreensizeLabel";
 import Zindex from "./Zindex";
 import "./index.css";
 export default function Lab2(){
@@ -77,7 +77,7 @@ export default function Lab2(){
         <Flex/><br/>
         <ReactIconsSampler/><br/>
         <BootstrapGrids/><br/>
-        <ScreensizeLabel/><br/>
+        {/* <ScreensizeLabel/><br/> */}
         <BootstrapTables/><br/>
         <BootstrapLists/><br/>
         <BootstrapForms/><br/>

@@ -12,7 +12,7 @@ export default function Signin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const signin = async () => {
-    const user =  await client.signin(credentials);
+    const user = await client.signin(credentials);
 
     if (!user) return;
     dispatch(setCurrentUser(user));
@@ -27,7 +27,7 @@ export default function Signin() {
         placeholder="username"
         className="form-control mb-1"
         defaultValue={credentials.username}
-             onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+        onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
 
       />
       <br />
@@ -37,7 +37,7 @@ export default function Signin() {
         type="password"
         className="form-control mb-1"
         defaultValue={credentials.password}
-             onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+        onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
 
       />
       <br />
