@@ -9,10 +9,10 @@ import WorkingWithObjectsAsynchronously from "./WorkingWithObjectsAsynchronously
 const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 export default function Lab5() {
     return (
-      <div id="wd-lab5">
+      <div id="wd-Lab5">
         <h2>Lab 5</h2>
         <div className="list-group">
-          <a href="https://kanbas-node-server-app-1-pv0y.onrender.com/lab5/welcome"
+          <a href="https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/welcome"
              className="list-group-item">
              Welcome
           </a>
