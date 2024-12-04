@@ -7,7 +7,7 @@ import Kanbas from "../Kanbas";
 import Lab4 from "./Lab4";
 import store from "./store";
 import { Provider } from "react-redux";
-import Lab5 from "./lab5";
+import Lab5 from "./Lab5";
 export default function Labs() {
   return (
     <Provider store={store}>
