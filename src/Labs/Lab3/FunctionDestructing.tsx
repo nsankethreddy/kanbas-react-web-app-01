@@ -11,7 +11,6 @@ export default function FunctionDestructing() {
         const subtract = (&#123; a, b &#125;) =&gt; a - b;<br />
         const difference = subtract(&#123; a: 4, b: 2 &#125;);<br/>
         sum = {sum}<br />
-        difference = {difference} <hr />
-      </div>
-   );}
-   
+     difference = {difference} <hr />
+   </div>
+);}

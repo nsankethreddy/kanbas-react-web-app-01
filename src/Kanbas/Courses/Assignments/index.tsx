@@ -1,54 +1,65 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import * as db from '../../Databases';
-import AssignmentControls from './AssignmentControls';
-import { FaSearch, FaPlus, FaTrash } from 'react-icons/fa';
+import AssignmentControls from './AssignmentControl';
+import {  FaPlus, FaTrash } from 'react-icons/fa';
 import LessonControlButtons from '../Modules/LessonControlButtons';
 import { IoEllipsisVertical } from 'react-icons/io5';
 import { BsGripVertical } from 'react-icons/bs';
-import { GiNotebook } from "react-icons/gi";
-import { addAssignment,editAssignment,deleteAssignmentAction,updateAssignmentAction, Assignment, setAssignments } from './reducer';
+import { TfiWrite } from 'react-icons/tfi';
+import * as coursesClient from "../client"
+import * as assignmentClient from "./client"
+import { setAssignments, addAssignment, editAssignment, updateAssignment, deleteAssignment } from './reducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteModule } from '../Modules/reducer';
-import { createAssignment, deleteAssignment, findAssignmentsForCourse } from './client';
+
 export default function Assignments() {
   const { cid } = useParams(); 
-  const assignments = useSelector((state: any) => state.assignmentsReducer.assignments);
-  const { currentUser } = useSelector((state: any) => state.accountReducer);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const fetchAssignments = async () => {
-      if (!cid) return;
-      try {
-        const data = await findAssignmentsForCourse(cid); // Fetch by courseId
-        dispatch(setAssignments(data));
-      } catch (error) {
-        console.error(`Error fetching assignments for course ${cid}:`, error);
-      }
-    };
-
-    fetchAssignments();
-  }, [cid, dispatch]);
-
   
-  const handleDelete = async (assignmentId: string) => {
-    if (window.confirm("Are you sure you want to delete this assignment?")) {
-      try {
-        await deleteAssignment(assignmentId);
-        dispatch(deleteAssignmentAction(assignmentId));
-      } catch (error) {
-        console.error("Error deleting assignment:", error);
-      }
-    }
-    
-  };
-
+  const dispatch = useDispatch();
+  
+  
+  const { currentUser } = useSelector((state: any) => state.accountReducer); // Get current user
+ 
+  
+ 
+  const isFaculty = currentUser?.role === "FACULTY";
+  const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+  const courseAssignments = assignments;
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [assignmentToDelete, setAssignmentToDelete] = useState<string | null>(null);
+  const fetchAssignments = async () => {
+    const assignments = await coursesClient.findAssignmentsForModules(cid as string);
+    dispatch(setAssignments(assignments));
+    
+  };
+  useEffect(() => {
+    fetchAssignments();
+  }, []);
+ 
 
 
-  const isFaculty = currentUser?.role === "FACULTY";
+  const removeModule = async (courseId: string) => {
+    await assignmentClient.deleteAssignment(courseId);
+    dispatch(deleteAssignment(courseId));
+  };
+
+
+  const confirmDelete = async () => {
+    if (assignmentToDelete) {
+      await removeModule(assignmentToDelete); // Use your delete method
+    }
+    setShowDeleteDialog(false);
+    setAssignmentToDelete(null);
+  };
+  const handleDeleteClick = (assignmentId: string) => {
+    setAssignmentToDelete(assignmentId);
+    setShowDeleteDialog(true);
+  };
+  
+
+  const cancelDelete = () => {
+    setShowDeleteDialog(false);
+    setAssignmentToDelete(null);
+  };
   return (
     <div className="w-100 p-5">
         <AssignmentControls cid={cid} />
@@ -76,7 +87,7 @@ export default function Assignments() {
               className="list-group-item p-3 d-flex align-items-center"
               style={{ borderLeft: "4px solid green" }}>
               <BsGripVertical className="me-3 fs-2" />
-              <GiNotebook className="me-3 text-success" style={{fontSize:'2rem'}}/>
+              <TfiWrite className="me-3 text-success fs-4" style={{fontSize:'2rem'}}/>
               <div className="flex-grow-1">
                 <Link
                   to={`${assignment._id}`}
@@ -91,12 +102,13 @@ export default function Assignments() {
                   <b>Due</b> {assignment.dueDate} at 11:59pm | {assignment.points} pts
                 </small>
               </div>
-              {isFaculty&&(
-              <FaTrash 
-                className="text-danger me-2 mb-1" 
-                onClick={() =>  handleDelete(assignment._id)} 
-                style={{ cursor: 'pointer' }} 
-              />)}
+              {isFaculty && (
+        <FaTrash 
+          className="text-danger me-3 mb-1 fs-5"  
+          onClick={() => handleDeleteClick(assignment._id)} 
+          style={{ cursor: 'pointer' }} 
+        />
+      )}
               <LessonControlButtons />
             </li>
           ))
@@ -104,7 +116,7 @@ export default function Assignments() {
           <p>No assignments available for this course.</p>
         )}
       </ul>
-      {/* {showDeleteDialog && (
+      {showDeleteDialog && (
         <div className="modal show" style={{ display: 'block' }}>
           <div className="modal-dialog">
             <div className="modal-content">
@@ -122,7 +134,7 @@ export default function Assignments() {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

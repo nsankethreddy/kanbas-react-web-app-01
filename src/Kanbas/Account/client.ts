@@ -1,54 +1,58 @@
 import axios from "axios";
-const axiosWithCredentials = axios.create({ withCredentials: true });
-export const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 
-export const USERS_API = `${REMOTE_SERVER}/api/users`;  
-export const ENROLLMENTS_API = `${REMOTE_SERVER}/api/enrollments`;
+export const USERS_API = `https://kanbas-node-server-app-fdzu.onrender.com/api/users`;
+const axiosWithCredentials = axios.create({ withCredentials: true });
+export const ENROLLMENTS_API = `https://kanbas-node-server-app-fdzu.onrender.com/api/enrollments`;
+
 
 export const signin = async (credentials: any) => {
-  const response = await axiosWithCredentials.post(`${USERS_API}/signin`, credentials);
-  console.log("Signin");
-  console.log(response.data);
-  return response.data;
-};
+    const response = await axiosWithCredentials.post(`${USERS_API}/signin`, credentials);
+    return response.data;
+  };
+  export const profile = async () => {
+    const response = await axiosWithCredentials.post(`${USERS_API}/profile`);
+    return response.data;
+  };
+  export const signup = async (user: any) => {
+    const response = await axiosWithCredentials.post(`${USERS_API}/signup`, user);
+    return response.data;
+  };
+  export const signout = async () => {
+    const response = await axiosWithCredentials.post(`${USERS_API}/signout`);
+    return response.data;
+  };
+  export const updateUser = async (user: any) => {
+    const response = await axiosWithCredentials.put(`${USERS_API}/${user._id}`, user);
+    return response.data;
+  };
+  export const findMyCourses = async () => {
+    const { data } = await axiosWithCredentials.get(`${USERS_API}/current/courses`);
 
-export const signup = async (user: any) => {
-  const response = await axiosWithCredentials.post(`${USERS_API}/signup`, user);
-  console.log("Signup");
-  console.log(response.data);
-  return response.data;
-};
+    return data;
+  };
+  export const findEnrolledCourses = async (userId : any) => {
+    const {data} = await axiosWithCredentials.get(`${USERS_API}/${userId}/enrolled-courses`);
+    return data;
+  }
 
-export const updateUser = async (user: any) => {
-  const response = await axiosWithCredentials.put(`${USERS_API}/${user._id}`, user);
-  return response.data;
-};
+  export const createCourse = async (course: any) => {
+    const { data } = await axiosWithCredentials.post(`${USERS_API}/current/courses`, course);
+    return data;
+  };
 
-export const profile = async () => {
-  console.log("profile in client");
-  const response = await axiosWithCredentials.post(`${USERS_API}/profile`);
-  console.log("profile in client");
-  console.log(response.data);
-  return response.data;
-};
-
-export const signout = async () => {
-  const response = await axiosWithCredentials.post(`${USERS_API}/signout`);
-  return response.data;
-};
-
-export const findMyCourses = async (user:any) => {
-  const { data } = await axiosWithCredentials.get(`${USERS_API}/${user._id}/courses`);
-  return data;
-};
-
-export const findAllCourses=async()=>{
-  const {data}=await axiosWithCredentials.get(`${REMOTE_SERVER}/api/courses`);
-  return data;
-}
-
-export const createCourse = async (course: any) => {
-  const { data } = await axiosWithCredentials.post(`${USERS_API}/current/courses`, course);
+  export const findAllCourses=async()=>{
+    const {data}=await axiosWithCredentials.get(`https://kanbas-node-server-app-fdzu.onrender.com/api/courses`);
+    return data;
+  }
+  export const addEnrollment = async (enrollment: any) => {
+    const { data } = await axiosWithCredentials.post(`${USERS_API}/current/enrolled`, enrollment);
+    return data;
+  };
+  export const getEnrollment = async (userId: string, courseId: string) => {
+  const { data } = await axiosWithCredentials.get(
+    `${USERS_API}/current/enrollmentStatus`,
+    { params: { user: userId, course: courseId } }
+  );
   return data;
 };
 
@@ -57,6 +61,7 @@ export const enrollUser = async (data: { courseId: string; userId: string }) => 
   const response = await axios.post(`${ENROLLMENTS_API}`, data);
   return response.data;
 };
+
 
 export const unenrollUser = async (unenrollment: { userId: string; courseId: string }) => {
   const response = await axios.delete(ENROLLMENTS_API, { data: unenrollment });

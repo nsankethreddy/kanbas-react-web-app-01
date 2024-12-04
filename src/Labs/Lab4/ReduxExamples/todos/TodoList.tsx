@@ -1,21 +1,30 @@
-import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 import { useSelector } from "react-redux";
-import TodosReducer from "./TodosReducer";
+
 export default function TodoList() {
-  const todos  = useSelector((state: any) => state.Todos?.todos||[]);
-  console.log(todos);
+  const { todos } = useSelector((state: any) => state.todosReducer);
+
   return (
-    <div>
+    <div style={{ padding: '5px' }}>
       <h2>Todo List</h2>
-      <ul className="list-group" style={{maxWidth:500}}>
-      <TodoForm/>
-      {todos.map((todo:any) => (
-        <TodoItem key={todo.id} todo={todo} />
-        ))}
-      </ul>
-      <hr/>
+      <div
+        style={{
+          
+          
+          margin: '5px',
+          borderRadius: '5px',
+          display: 'inline-block',
+        }}
+      >
+        <ul className="list-group-item" style={{ padding: 0, margin: 0, listStyle: 'none' }}>
+          <TodoForm />
+          {todos.map((todo: any, index: number) => (
+            <TodoItem key={index} todo={todo} />
+          ))}
+        </ul>
+      </div>
+      <hr />
     </div>
   );
 }

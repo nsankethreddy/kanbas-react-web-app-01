@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
   modules: [],
 };
@@ -16,7 +17,6 @@ const modulesSlice = createSlice({
         lessons: [],
         name: module.name,
         course: module.course,
-        description:module.description,
       };
       state.modules = [...state.modules, newModule] as any;
     },
@@ -32,10 +32,10 @@ const modulesSlice = createSlice({
     editModule: (state, { payload: moduleId }) => {
       state.modules = state.modules.map((m: any) =>
         m._id === moduleId ? { ...m, editing: true } : m
-      ) as any;
-    },
-  },
+    ) as any;
+},
+},
 });
-export const { addModule, deleteModule, updateModule, editModule ,setModules} =
-  modulesSlice.actions;
+export const { addModule, deleteModule, updateModule, editModule,setModules } =
+modulesSlice.actions;
 export default modulesSlice.reducer;
