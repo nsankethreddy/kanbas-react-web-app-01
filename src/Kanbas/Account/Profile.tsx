@@ -5,12 +5,12 @@ import { setCurrentUser } from "./reducer";
 import * as client from "./client";
 
 export default function Profile() {
-  const [profile, setProfile] = useState<any>({});
+  const [Profile, setProfile] = useState<any>({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   const updateProfile = async () => {
-    const updatedProfile = await client.updateUser(profile);
+    const updatedProfile = await client.updateUser(Profile);
     dispatch(setCurrentUser(updatedProfile));
 
   };
@@ -27,23 +27,23 @@ export default function Profile() {
 
   useEffect(() => { fetchProfile(); }, []);
   return (
-    <div className="wd-profile-screen">
+    <div className="wd-Profile-screen">
       <h3>Profile</h3>
-      {profile && (
+      {Profile && (
         <div>
-          <input defaultValue={profile.username} id="wd-username" className="form-control mb-2"
-            onChange={(e) => setProfile({ ...profile, username: e.target.value })} />
-          <input defaultValue={profile.password} id="wd-password" className="form-control mb-2"
-            onChange={(e) => setProfile({ ...profile, password: e.target.value })} />
-          <input defaultValue={profile.firstName} id="wd-firstname" className="form-control mb-2"
-            onChange={(e) => setProfile({ ...profile, firstName: e.target.value })} />
-          <input defaultValue={profile.lastName} id="wd-lastname" className="form-control mb-2"
-            onChange={(e) => setProfile({ ...profile, lastName: e.target.value })} />
-          <input defaultValue={profile.dob} id="wd-dob" className="form-control mb-2"
-            onChange={(e) => setProfile({ ...profile, dob: e.target.value })} type="date" />
-          <input defaultValue={profile.email} id="wd-email" className="form-control mb-2"
-            onChange={(e) => setProfile({ ...profile, email: e.target.value })} />
-          <select onChange={(e) => setProfile({ ...profile, role: e.target.value })}
+          <input defaultValue={Profile.username} id="wd-username" className="form-control mb-2"
+            onChange={(e) => setProfile({ ...Profile, username: e.target.value })} />
+          <input defaultValue={Profile.password} id="wd-password" className="form-control mb-2"
+            onChange={(e) => setProfile({ ...Profile, password: e.target.value })} />
+          <input defaultValue={Profile.firstName} id="wd-firstname" className="form-control mb-2"
+            onChange={(e) => setProfile({ ...Profile, firstName: e.target.value })} />
+          <input defaultValue={Profile.lastName} id="wd-lastname" className="form-control mb-2"
+            onChange={(e) => setProfile({ ...Profile, lastName: e.target.value })} />
+          <input defaultValue={Profile.dob} id="wd-dob" className="form-control mb-2"
+            onChange={(e) => setProfile({ ...Profile, dob: e.target.value })} type="date" />
+          <input defaultValue={Profile.email} id="wd-email" className="form-control mb-2"
+            onChange={(e) => setProfile({ ...Profile, email: e.target.value })} />
+          <select onChange={(e) => setProfile({ ...Profile, role: e.target.value })}
             className="form-control mb-2" id="wd-role">
             <option value="USER">User</option>            <option value="ADMIN">Admin</option>
             <option value="FACULTY">Faculty</option>      <option value="STUDENT">Student</option>

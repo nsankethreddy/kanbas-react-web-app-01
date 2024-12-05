@@ -19,7 +19,7 @@ export default function Session({ children }: { children: any }) {
       if (err.response && err.response.status === 401) {
         console.error('Unauthorized: Redirecting to login.');
       } else {
-        console.error('Failed to fetch user profile:', err);
+        console.error('Failed to fetch user Profile:', err);
       }
     }
     setPending(false);

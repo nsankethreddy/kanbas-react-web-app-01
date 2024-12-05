@@ -12,7 +12,7 @@ export const Signin = async (credentials: any) => {
   );
   return response.data;
 };
-export const profile = async () => {
+export const Profile = async () => {
   const response = await axiosWithCredentials.post(`${USERS_API}/Profile`);
   return response.data;
 };
