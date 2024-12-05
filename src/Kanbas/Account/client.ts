@@ -13,7 +13,7 @@ export const Signin = async (credentials: any) => {
   return response.data;
 };
 export const profile = async () => {
-  const response = await axiosWithCredentials.post(`${USERS_API}/profile`);
+  const response = await axiosWithCredentials.post(`${USERS_API}/Profile`);
   return response.data;
 };
 export const Signup = async (user: any) => {

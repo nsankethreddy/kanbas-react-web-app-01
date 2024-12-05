@@ -12,7 +12,7 @@ export default function Session({ children }: { children: any }) {
 
   const fetchProfile = async () => {
     try {
-      const response = await axiosWithCredentials.get('/profile'); // Use axiosWithCredentials to make the request
+      const response = await axiosWithCredentials.get('/Profile'); // Use axiosWithCredentials to make the request
       const currentUser = response.data;
       dispatch(setCurrentUser(currentUser));
     } catch (err: any) {
