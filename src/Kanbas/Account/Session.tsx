@@ -12,19 +12,28 @@ export default function Session({ children }: { children: any }) {
 
   const fetchProfile = async () => {
     try {
-      const response = await axiosWithCredentials.get('/Profile'); // Use axiosWithCredentials to make the request
-      const currentUser = response.data;
-      dispatch(setCurrentUser(currentUser));
+      const response = await axiosWithCredentials.get('/api/users/Profile');
+      if (response.data && typeof response.data === 'object') {
+        const currentUser = response.data;
+        dispatch(setCurrentUser(currentUser));
+      } else {
+        console.error('Invalid response data from server:', response.data);
+      }
     } catch (err: any) {
-      if (err.response && err.response.status === 401) {
-        console.error('Unauthorized: Redirecting to login.');
+      if (err.response) {
+        if (err.response.status === 401) {
+          console.error('Unauthorized: Redirecting to login.');
+        } else if (err.response.status === 404) {
+          console.error('Resource not found: Check the /Profile endpoint.');
+        } else {
+          console.error('Failed to fetch user Profile:', err);
+        }
       } else {
         console.error('Failed to fetch user Profile:', err);
       }
     }
     setPending(false);
   };
-
   useEffect(() => {
     fetchProfile();
   }, []);
@@ -33,6 +42,6 @@ export default function Session({ children }: { children: any }) {
     return children;
   }
 
-  return null; // Return null or a loading indicator while pending
+  return null;
 }
 
