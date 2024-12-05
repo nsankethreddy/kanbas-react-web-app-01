@@ -13,11 +13,10 @@ export default function AccountNavigation() {
           <Link
             to="/Kanbas/Account/Profile"
             id="wd-course-home-link"
-            className={`${
-              pathname.includes("Profile")
+            className={`${pathname.includes("Profile")
                 ? "list-group-item active border border-0"
                 : "list-group-item text-danger border border-0"
-            }`}
+              }`}
           >
             Profile
           </Link>
@@ -25,11 +24,10 @@ export default function AccountNavigation() {
             <Link
               to="/Kanbas/Account/Users"
               id="wd-course-home-link"
-              className={`${
-                pathname.includes("Users")
+              className={`${pathname.includes("Users")
                   ? "list-group-item active border border-0"
                   : "list-group-item text-danger border border-0"
-              }`}
+                }`}
             >
               Users
             </Link>
@@ -40,11 +38,10 @@ export default function AccountNavigation() {
           <Link
             to="/Kanbas/Account/Signin"
             id="wd-course-home-link"
-            className={`${
-              pathname.includes("Signin")
+            className={`${pathname.includes("Signin")
                 ? "list-group-item active border border-0"
                 : "list-group-item text-danger border border-0"
-            }`}
+              }`}
           >
             Sign In
           </Link>
@@ -52,11 +49,10 @@ export default function AccountNavigation() {
           <Link
             to="/Kanbas/Account/Signup"
             id="wd-course-home-link"
-            className={`${
-              pathname.includes("Signup")
+            className={`${pathname.includes("Signup")
                 ? "list-group-item active border border-0"
                 : "list-group-item text-danger border border-0"
-            }`}
+              }`}
           >
             Sign Up
           </Link>

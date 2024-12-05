@@ -32,19 +32,19 @@ export default function Profile() {
       {profile && (
         <div>
           <input defaultValue={profile.username} id="wd-username" className="form-control mb-2"
-                 onChange={(e) => setProfile({ ...profile, username:  e.target.value })}/>
+            onChange={(e) => setProfile({ ...profile, username: e.target.value })} />
           <input defaultValue={profile.password} id="wd-password" className="form-control mb-2"
-                 onChange={(e) => setProfile({ ...profile, password:  e.target.value })}/>
+            onChange={(e) => setProfile({ ...profile, password: e.target.value })} />
           <input defaultValue={profile.firstName} id="wd-firstname" className="form-control mb-2"
-                 onChange={(e) => setProfile({ ...profile, firstName: e.target.value })}/>
+            onChange={(e) => setProfile({ ...profile, firstName: e.target.value })} />
           <input defaultValue={profile.lastName} id="wd-lastname" className="form-control mb-2"
-                 onChange={(e) => setProfile({ ...profile, lastName:  e.target.value })}/>
+            onChange={(e) => setProfile({ ...profile, lastName: e.target.value })} />
           <input defaultValue={profile.dob} id="wd-dob" className="form-control mb-2"
-                 onChange={(e) => setProfile({ ...profile, dob: e.target.value })} type="date"/>
+            onChange={(e) => setProfile({ ...profile, dob: e.target.value })} type="date" />
           <input defaultValue={profile.email} id="wd-email" className="form-control mb-2"
-                 onChange={ (e) => setProfile({ ...profile, email: e.target.value })}/>
-          <select onChange={(e) => setProfile({ ...profile, role:  e.target.value })}
-                 className="form-control mb-2" id="wd-role">
+            onChange={(e) => setProfile({ ...profile, email: e.target.value })} />
+          <select onChange={(e) => setProfile({ ...profile, role: e.target.value })}
+            className="form-control mb-2" id="wd-role">
             <option value="USER">User</option>            <option value="ADMIN">Admin</option>
             <option value="FACULTY">Faculty</option>      <option value="STUDENT">Student</option>
           </select>
@@ -55,5 +55,6 @@ export default function Profile() {
           </button>
         </div>
       )}
-</div>);}
+    </div>);
+}
 

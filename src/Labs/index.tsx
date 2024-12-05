@@ -14,7 +14,7 @@ export default function Labs() {
     <div>
 
 
-      <h2 id="wd-name">Tanya Shukla</h2>
+      <h2 id="wd-name">Sanketh Reddy</h2>
       <h1>Labs</h1>
       <TOC></TOC>
       <Routes>
