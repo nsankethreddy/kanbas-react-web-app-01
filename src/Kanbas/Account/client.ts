@@ -4,7 +4,7 @@ export const USERS_API = `https://kanbas-node-server-app-1-pv0y.onrender.com/api
 const axiosWithCredentials = axios.create({ withCredentials: true });
 export const ENROLLMENTS_API = `https://kanbas-node-server-app-1-pv0y.onrender.com/api/enrollments`;
 
-export const signin = async (credentials: any) => {
+export const Signin = async (credentials: any) => {
   const response = await axiosWithCredentials.post(
     `${USERS_API}/Signin`,
     credentials
@@ -15,8 +15,8 @@ export const profile = async () => {
   const response = await axiosWithCredentials.post(`${USERS_API}/profile`);
   return response.data;
 };
-export const signup = async (user: any) => {
-  const response = await axiosWithCredentials.post(`${USERS_API}/signup`, user);
+export const Signup = async (user: any) => {
+  const response = await axiosWithCredentials.post(`${USERS_API}/Signup`, user);
   return response.data;
 };
 export const signout = async () => {

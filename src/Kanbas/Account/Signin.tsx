@@ -11,8 +11,8 @@ export default function Signin() {
   const [credentials, setCredentials] = useState<any>({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const signin = async () => {
-    const user = await client.signin(credentials);
+  const Signin = async () => {
+    const user = await client.Signin(credentials);
 
     if (!user) return;
     dispatch(setCurrentUser(user));
@@ -20,7 +20,7 @@ export default function Signin() {
   };
 
   return (
-    <div id="wd-signin-screen" className="p-3">
+    <div id="wd-Signin-screen" className="p-3">
       <h3>Sign in</h3>
       <input
         id="wd-username"
@@ -41,10 +41,10 @@ export default function Signin() {
 
       />
       <br />
-      <button onClick={signin} id="wd-signin-btn" className="btn btn-primary w-100" > Sign in </button>
+      <button onClick={Signin} id="wd-Signin-btn" className="btn btn-primary w-100" > Sign in </button>
 
       <br />
-      <Link id="wd-signup-link" to="/Kanbas/Account/Signup">
+      <Link id="wd-Signup-link" to="/Kanbas/Account/Signup">
         Sign up
       </Link>
     </div>
