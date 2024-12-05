@@ -1,8 +1,9 @@
 import axios from "axios";
+const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 
-export const USERS_API = `https://kanbas-node-server-app-1-pv0y.onrender.com/api/users`;
+export const USERS_API = `${REMOTE_SERVER}/api/users`;
 const axiosWithCredentials = axios.create({ withCredentials: true });
-export const ENROLLMENTS_API = `https://kanbas-node-server-app-1-pv0y.onrender.com/api/enrollments`;
+export const ENROLLMENTS_API = `${REMOTE_SERVER}/api/enrollments`;
 
 export const Signin = async (credentials: any) => {
   const response = await axiosWithCredentials.post(
@@ -54,7 +55,7 @@ export const createCourse = async (course: any) => {
 
 export const findAllCourses = async () => {
   const { data } = await axiosWithCredentials.get(
-    `https://kanbas-node-server-app-1-pv0y.onrender.com/api/courses`
+    `${REMOTE_SERVER}/api/courses`
   );
   return data;
 };

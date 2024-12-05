@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 
 export default function WorkingWithArrays() {
-  const API = `https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/todos`;
+  const API = `${REMOTE_SERVER}/Lab5/todos`;
   const [todo, setTodo] = useState({id: "1",title: "NodeJS Assignment",
     description: "Create a NodeJS server with ExpressJS",
     due: "2021-09-09",

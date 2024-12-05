@@ -1,10 +1,11 @@
 import axios from "axios";
+const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 
 export const fetchWelcomeMessage = async () => {
-  const response = await axios.get(`https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/welcome`);
+  const response = await axios.get(`${REMOTE_SERVER}/Lab5/welcome`);
   return response.data;
 };
-const ASSIGNMENT_API = `https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/assignment`;
+const ASSIGNMENT_API = `${REMOTE_SERVER}/Lab5/assignment`;
 export const fetchAssignment = async () => {
   const response = await axios.get(`${ASSIGNMENT_API}`);
   return response.data;
@@ -19,7 +20,7 @@ export const updateTodo = async (todo: any) => {
   };
 
 
-const TODOS_API = `https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/todos`;
+const TODOS_API = `${REMOTE_SERVER}/Lab5/todos`;
 export const fetchTodos = async () => {
   const response = await axios.get(TODOS_API);
   return response.data;

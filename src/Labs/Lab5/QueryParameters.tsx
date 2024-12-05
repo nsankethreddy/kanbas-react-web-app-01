@@ -1,4 +1,5 @@
 import { useState } from "react";
+const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 
 export default function QueryParameters() {
     const [a, setA] = useState("34");
@@ -15,19 +16,19 @@ export default function QueryParameters() {
          defaultValue={b} type="number"
          onChange={(e) => setB(e.target.value)} />
   <a id="wd-query-parameter-add"
-     href={`https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/calculator?operation=add&a=${a}&b=${b}`}>
+     href={`${REMOTE_SERVER}/Lab5/calculator?operation=add&a=${a}&b=${b}`}>
     Add {a} + {b}
   </a>
   <a id="wd-query-parameter-subtract"
-     href={`https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/calculator?operation=subtract&a=${a}&b=${b}`}>
+     href={`${REMOTE_SERVER}/Lab5/calculator?operation=subtract&a=${a}&b=${b}`}>
     Substract {a} - {b}
   </a>
   <a id="wd-query-parameter-add"
-     href={`https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/calculator?operation=multiply&a=${a}&b=${b}`}>
+     href={`${REMOTE_SERVER}/Lab5/calculator?operation=multiply&a=${a}&b=${b}`}>
     Multiply {a} * {b}
   </a>
   <a id="wd-query-parameter-subtract"
-     href={`https://kanbas-node-server-app-1-pv0y.onrender.com/Lab5/calculator?operation=divide&a=${a}&b=${b}`}>
+     href={`${REMOTE_SERVER}/Lab5/calculator?operation=divide&a=${a}&b=${b}`}>
     Divide {a} / {b}
   </a>
 
