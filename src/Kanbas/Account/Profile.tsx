@@ -43,10 +43,16 @@ export default function Profile() {
             onChange={(e) => setProfile({ ...Profile, dob: e.target.value })} type="date" />
           <input defaultValue={Profile.email} id="wd-email" className="form-control mb-2"
             onChange={(e) => setProfile({ ...Profile, email: e.target.value })} />
-          <select onChange={(e) => setProfile({ ...Profile, role: e.target.value })}
-            className="form-control mb-2" id="wd-role">
-            <option value="USER">User</option>            <option value="ADMIN">Admin</option>
-            <option value="FACULTY">Faculty</option>      <option value="STUDENT">Student</option>
+          <select
+            value={Profile.role}
+            onChange={(e) => setProfile({ ...Profile, role: e.target.value })}
+            className="form-control mb-2"
+            id="wd-role"
+          >
+            <option value="USER">User</option>
+            <option value="ADMIN">Admin</option>
+            <option value="FACULTY">Faculty</option>
+            <option value="STUDENT">Student</option>
           </select>
           <button onClick={updateProfile} className="btn btn-primary w-100 mb-2"> Update </button>
 
