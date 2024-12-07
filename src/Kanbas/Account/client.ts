@@ -20,8 +20,8 @@ export const Signup = async (user: any) => {
   const response = await axiosWithCredentials.post(`${USERS_API}/Signup`, user);
   return response.data;
 };
-export const signout = async () => {
-  const response = await axiosWithCredentials.post(`${USERS_API}/signout`);
+export const Signout = async () => {
+  const response = await axiosWithCredentials.post(`${USERS_API}/Signout`);
   return response.data;
 };
 

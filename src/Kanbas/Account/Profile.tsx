@@ -19,8 +19,8 @@ export default function Profile() {
     if (!currentUser) return navigate("/Kanbas/Account/Signin");
     setProfile(currentUser);
   };
-  const signout = async () => {
-    await client.signout();
+  const Signout = async () => {
+    await client.Signout();
     dispatch(setCurrentUser(null));
     navigate("/Kanbas/Account/Signin");
   };
@@ -50,7 +50,7 @@ export default function Profile() {
           </select>
           <button onClick={updateProfile} className="btn btn-primary w-100 mb-2"> Update </button>
 
-          <button onClick={signout} className="btn btn-danger w-100 mb-2" id="wd-signout-btn">
+          <button onClick={Signout} className="btn btn-danger w-100 mb-2" id="wd-Signout-btn">
             Sign out
           </button>
         </div>
