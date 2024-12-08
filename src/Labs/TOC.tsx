@@ -33,7 +33,8 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-a5" href="#/Labs/Lab5" className={`nav-link ${pathname.includes("Lab5") ? "active" : ""}`}>
+        <a id="wd-a5" href="#/Labs/Lab5"
+          className={`nav-link ${pathname.includes("Lab5") ? "active" : ""}`}>
           Lab 5
         </a>
       </li>
@@ -43,11 +44,16 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-k" href="https://github.com/nsankethreddy" className="nav-link">
-          My GitHub
+        <a id="wd-k" href="https://github.com/nsankethreddy/kanbas-react-web-app-01" className="nav-link">
+          React App
+        </a>
+      </li>
+
+      <li className="nav-item">
+        <a id="wd-k" href="https://github.com/nsankethreddy/kanbas-node-server-app" className="nav-link">
+          Server App
         </a>
       </li>
     </ul>
   );
 }
-

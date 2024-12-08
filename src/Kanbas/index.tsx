@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Account from "./Account";
-import Dashboard from "./Dashboard/Dashboard";
-import KanbasNavigation from "./Navigation";
+import Dashboard from "./Dashboard";
+import KanbasNavigation from "./KanbasNavigation";
 import Courses from "./Courses";
 import "./styles.css";
 import { useEffect, useState } from "react";
@@ -12,54 +12,23 @@ import { useSelector } from "react-redux";
 import * as courseClient from "./Courses/client";
 import { enrollIntoCourse, enrollUser, unenrollFromCourse, unenrollUser } from "../Kanbas/Account/client";
 
+
 export default function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
   const [allCourses, setAllCourses] = useState<any[]>([]);
   const [enrolledCourses, setEnrolledCourses] = useState<any[]>([]);
+  const [enrolling, setEnrolling] = useState<boolean>(false);
 
   const { currentUser } = useSelector((state: any) => state.accountReducer);
-  const [enrolling, setEnrolling] = useState<boolean>(false);
   const findCoursesForUser = async () => {
     try {
-
-      const courses = await userClient.findCoursesForUser(currentUser);
-
+      const courses = await userClient.findCoursesForUser(currentUser._id);
+      console.log(courses);
       setEnrolledCourses(courses);
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching enrolled courses:", error);
     }
   };
-
-  const fetchCourses = async () => {
-    try {
-      const allCourses = await courseClient.fetchAllCourses();
-
-      const enrolledCourses = await userClient.findCoursesForUser(
-        currentUser
-
-      );
-
-
-      const courses = allCourses.map((course: any) => {
-
-        if (enrolledCourses.find((c: any) => c._id === course._id)) {
-          return { ...course, enrolled: true };
-        } else {
-          return course;
-        }
-      });
-      console.log()
-      setCourses(allCourses);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  useEffect(() => {
-    if (currentUser && currentUser._id) {
-      fetchCourses();
-
-    }
-  }, [currentUser]);
 
   useEffect(() => {
     if (currentUser) {
@@ -69,8 +38,6 @@ export default function Kanbas() {
       setAllCourses([]);
       setEnrolledCourses([]);
     }
-
-
 
   }, [currentUser, enrolling]);
 
@@ -91,14 +58,38 @@ export default function Kanbas() {
     }
   };
   useEffect(() => {
-
     fetchCourses();
   }, []);
 
+  const fetchCourses = async () => {
+    try {
+      const allCourses = await courseClient.fetchAllCourses();
+      const enrolledCourses = await userClient.findCoursesForUser(
+        currentUser._id
+      );
+      const courses = allCourses.map((course: any) => {
+        if (enrolledCourses.find((c: any) => c._id === course._id)) {
+          return { ...course, enrolled: true };
+        } else {
+          return course;
+        }
+      });
+      setCourses(allCourses);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
+  useEffect(() => {
+    if (currentUser && currentUser._id) {
+      fetchCourses();
+
+    }
+  }, [currentUser]);
 
   const addNewCourse = async () => {
     const { _id, ...courseData } = course;
+    console.log(courseData)
     const newCourse = await courseClient.createCourse(course);
     setAllCourses([...allCourses, newCourse]);
     await findCoursesForUser();
@@ -109,9 +100,6 @@ export default function Kanbas() {
     setAllCourses(allCourses.filter((course) => course._id !== courseId));
     await unenrollFromCourse(currentUser._id, courseId);
     setEnrolledCourses(enrolledCourses.filter((c: any) => c._id !== courseId));
-
-
-
   };
 
   const updateCourse = async () => {
@@ -134,12 +122,9 @@ export default function Kanbas() {
         }
       })
     );
-    const updatedEnrolledCourses = await userClient.findCoursesForUser(currentUser);
+    const updatedEnrolledCourses = await userClient.findCoursesForUser(currentUser._id);
     setEnrolledCourses(updatedEnrolledCourses);
-    console.log(enrolledCourses)
-
   };
-
 
   return (
     <Session>

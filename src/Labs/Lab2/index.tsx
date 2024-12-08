@@ -1,21 +1,21 @@
-import BackgroundColors from "./BackgroundColors";
-import BootstrapLists from "./BootstrapLists";
+import Background from "./Background";
+import BootstrapLists from "./BootsrapLists";
 import BootstrapForms from "./BootstrapForms";
 import BootstrapGrids from "./BootstrapGrids";
 import BoostrapNavigation from "./BootstrapNavigation";
-import BootstrapTables from "./BootstrapTables";
+import BootstrapTable from "./BootstrapTable";
 import Borders from "./Borders";
 import Corners from "./Corners";
 import Dimensions from "./Dimensions";
 import Flex from "./Flex";
 import Float from "./Float";
-import ForegroundColors from "./ForegroundColors";
-import GridLayout from "./GridLayout";
+import Foreground from "./Foreground";
+import Gridlayout from "./Gridlayout";
 import Margins from "./Margins";
 import Padding from "./Padding";
 import Positions from "./Positions";
 import ReactIconsSampler from "./ReactIcons";
-// import ScreensizeLabel from "./ScreensizeLabel";
+import ScreenSizeLabel from "./ScreenSizeLabel";
 import Zindex from "./Zindex";
 import "./index.css";
 export default function Lab2(){
@@ -63,8 +63,8 @@ export default function Lab2(){
             </div>
           </div>
         </div>
-        <ForegroundColors/><br/>
-        <BackgroundColors/><br/>
+        <Foreground/><br/>
+        <Background/><br/>
         <Borders/><br/>
         <Padding/><br/>
         <Margins/><br/>
@@ -73,12 +73,12 @@ export default function Lab2(){
         <Positions/><br/>
         <Zindex/><br/>
         <Float/><br/>
-        <GridLayout/><br/>
+        <Gridlayout/><br/>
         <Flex/><br/>
         <ReactIconsSampler/><br/>
         <BootstrapGrids/><br/>
-        {/* <ScreensizeLabel/><br/> */}
-        <BootstrapTables/><br/>
+        <ScreenSizeLabel/><br/>
+        <BootstrapTable/><br/>
         <BootstrapLists/><br/>
         <BootstrapForms/><br/>
         <BoostrapNavigation/><br/>
@@ -86,28 +86,3 @@ export default function Lab2(){
     );
     
 }
-// import  React from 'react';
-// import { Link,Route,Routes, useParams } from 'react-router-dom';
-
-// function Def() {
-//   const { pathname } = useParams();
-//   return (
-//     <div>
-//       output =
-//       {pathname?.endsWith("r") && <span>p</span>}
-//       {pathname?.endsWith("w") && <span>y</span>}
-//     </div>
-//   );
-// }
-
-// export default function Lab2() {
-//   return (
-//     <div>
-//       <Link to="q/w">x</Link>
-//       <Link to="q/s">r</Link>
-//       <Routes>
-//         <Route path="q/:a" element={<Def />} />
-//       </Routes>
-//     </div>
-//   );
-// }
