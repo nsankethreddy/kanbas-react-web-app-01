@@ -1,18 +1,24 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 export default function CoursesNavigation() {
-  return (
-    <div id="wd-courses-navigation">
-      <Link id="wd-course-home-link" to="/Kanbas/Courses/1234/Home">Home</Link><br />
-      <Link id="wd-course-modules-link" to="/Kanbas/Courses/1234/Modules">Modules
-      </Link><br />
-      <Link id="wd-course-piazza-link" to="/Kanbas/Courses/1234/Piazza">Piazza</Link><br />
-      <Link id="wd-course-zoom-link" to="/Kanbas/Courses/1234/Zoom">Zoom</Link><br />
-      <Link id="wd-course-quizzes-link" to="/Kanbas/Courses/1234/Assignments">
-        Assignments</Link><br />
-      <Link id="wd-course-assignments-link" to="/Kanbas/Courses/1234/Quizzes">Quizzes
-      </Link><br />
-      <Link id="wd-course-grades-link" to="/Kanbas/Courses/1234/Grades">Grades</Link><br />
-      <Link id="wd-course-people-link" to="/Kanbas/People">People</Link><br />
+  const { pathname } = useLocation();
+  const { cid } = useParams();
+  const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People"];
+  return (  
+    <div id="wd-courses-navigation" className="wd list-group fs-6 rounded-0">
+    {links.map((link)=>(
+      <React.Fragment key={link}>
+        <Link 
+        key={link} 
+        to={`/Kanbas/Courses/${cid}/${link}`}
+        id={`wd-course-${link.toLowerCase()}-link`}
+        className={`${pathname.includes(link)?"list-group-item active border border-0":"list-group-item text-danger border border-0"}`}>
+          {link}
+        </Link> 
+        <br/>
+        </React.Fragment>
+      ))}
+      
     </div>
   );
 }
