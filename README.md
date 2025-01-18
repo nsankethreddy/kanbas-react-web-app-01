@@ -1,3 +1,13 @@
+# Netlify for hosting FRONTEND
+https://kanbas-node-server-app-fdzu.onrender.com
+
+# RENDER FOR HOSTING BANCKEND
+https://coruscating-bavarois-5b3310.netlify.app/#/Kanbas/Account/Signin
+
+# MONGODB ATLAS
+https://cloud.mongodb.com/v2/6754fc6712f00f1d2e1531f3#/overview
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
